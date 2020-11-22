@@ -1,3 +1,4 @@
+publishDir = "../alihacks.github.io"
 baseURL = "http://alihacks.github.io/"
 languageCode = "en-us"
 title = "Ali's Blog"

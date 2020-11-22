@@ -1,0 +1,4 @@
+/* Get rid of all caps in logo */
+.logo__text {
+    text-transform: none;
+}

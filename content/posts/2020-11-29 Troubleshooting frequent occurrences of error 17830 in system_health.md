@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting frequent error 17830 messages in system_health"
+title: "Troubleshooting frequent occurrences of error 17830 in system_health"
 date: 2020-11-22T14:26:15-05:00
 draft: false
 ---

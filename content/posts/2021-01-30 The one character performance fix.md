@@ -10,7 +10,7 @@ We're going to demonstrate the impact of parameter data types on performance. Fo
 ```sql
 DROP TABLE IF EXISTS dbo.sessions
 CREATE TABLE dbo.sessions(
-	id NUMERIC(18, 0) IDENTITY(1,1) NOT NULL,
+	id BIGINT IDENTITY(1,1) NOT NULL,
 	session_cookie VARCHAR(32) NULL,
 	ts DATETIME NULL
 	INDEX IX1(session_cookie)
@@ -110,7 +110,7 @@ And now we get
 Completed 25 threads with 500 queries each, total time: 521.9987s
 ```
 
-There is definitely some improvement (confirmed over multiple runs) if we rebuild the index after the inserts. But we're still pegging the CPU with 25 threads. Now let's apply our one character fix by running the same Python script but replacing `NVARCHAR(4000)` with `VARCHAR(4000)` to see what this gives us. (The database and table was rebuilt for this run, *without* doing any index rebuilds - so same setup as test 1)
+There is definitely some improvement (confirmed over multiple runs) if we rebuild the index after the inserts. But we're still pegging the CPU with 25 threads. Now let's apply our one character fix by running the same Python script but replacing `NVARCHAR(4000)` with `VARCHAR(4000)` to see what this gives us. (The database was rebuilt for this run, *without* doing any index rebuilds - so same setup as test 1)
 
 
 ![cpu during test 3](/images/20210131_test3.png)
